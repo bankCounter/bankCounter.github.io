@@ -1,0 +1,179 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7f5fb ;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    border: 0px solid green;
+    height: 100vh;
+    width: 100vw;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 85vw;
+    background-color: #f8fcfe ;
+}
+
+input {
+    background-color: transparent;
+    width: 80%;
+    opacity: 1;
+}
+
+input:focus {
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+
+input:hover {
+    background-color: yellow;
+}
+
+.noBorder {
+    border: 0px;
+    color: darkgreen;
+}
+
+h2, h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    border-bottom: 0px solid black;
+    margin: 0px;
+    padding: 2px 0px;
+    font-weight: normal;
+    font-variant: small-caps;
+
+}
+
+
+table{
+    /* background-color: #87ceeb ; */
+    border: 0px solid green;
+    padding: 0px;
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tr {
+    border-bottom: 1px solid black;
+    padding: 0px;
+}
+
+th{
+    padding: 0px;
+    text-align: center;
+
+}
+
+tr:last-child{
+    border-bottom: 0px;
+}
+
+td {
+    border: 0px solid black;
+    width: 60px;
+    height: 25px;
+}
+
+.borderSeperator {
+    border-bottom: 3px double black;
+}
+
+.totalLine {
+    text-align: right;
+    color: gray;
+    /* font-style: italic; */
+    border: 0px;
+    font-variant: small-caps;
+
+}
+
+.bankLine{
+    /* background-color: rgb(100, 170, 170); */
+    text-align: right;
+    font-variant: small-caps;
+    
+}
+
+.loanLine{
+    /* background-color: rgb(125, 170, 170); */
+    text-align: right;
+    font-variant: small-caps;
+
+}
+
+.depositLine {
+    /* text-align: right; */
+    font-weight: bold;
+
+}
+/* 
+.depositLine {
+    color: #000 !important;
+    background:-webkit-linear-gradient(top,#87ceeb 25%,#69c2e6 75%)}
+  .depositLine {
+    color: #000 !important;
+    background:-moz-linear-gradient(top,#87ceeb 25%,#69c2e6 75%)}
+  .depositLine {
+    color: #000 !important;
+    background:-o-linear-gradient(top,#87ceeb 25%,#69c2e6 75%)}
+  .depositLine {
+    color: #000 !important;
+    background:-ms-linear-gradient(top,#87ceeb 25%,#69c2e6 75%)}
+  .depositLine {
+    color: #000 !important;
+    background: linear-gradient(top,#87ceeb 25%,#69c2e6 75%)}
+ */
+
+.denomination {
+    color: grey;
+}
+
+
+
+.loanSign {
+    color: red;
+    text-align: right;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+#loanHtml {
+    color: red;
+    text-align: center;
+}
+
+#depositHtml {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+
+#loanInput {
+    color: red;
+    text-align: right;
+}
+
+#coinHtml, #rollHtml, #billHtml, #bankHtml {
+    text-align: left;
+}
+
+#dateHtml {
+    background-color: lightgray;
+    color: #101820FF;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: small;
+}
