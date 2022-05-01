@@ -8,23 +8,20 @@ body {
     margin: 0 auto;
     padding: 0;
     border: 0px solid green;
-    height: 100vh;
-    width: 100vw;
 }
 
 #container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 85vh;
-    width: 85vw;
+    align-items: top;
     background-color: #f8fcfe ;
 }
 
 input {
     background-color: transparent;
-    width: 80%;
+    width: 75%;
     opacity: 1;
+    text-align: center;
 }
 
 input:focus {
@@ -55,7 +52,8 @@ h2, h3 {
 
 
 table{
-    /* background-color: #87ceeb ; */
+    width: 375px;
+    background-color: beige ;
     border: 0px solid green;
     padding: 0px;
     border-collapse: collapse;
@@ -81,8 +79,9 @@ tr:last-child{
 
 td {
     border: 0px solid black;
-    width: 60px;
     height: 25px;
+    width: 12.5%;
+    text-align: center;
 }
 
 .borderSeperator {
@@ -155,16 +154,7 @@ td {
     text-align: center;
 }
 
-#depositHtml {
-    text-align: left;
-    color: black;
-    font-weight: bold;
-}
 
-#loanInput {
-    color: red;
-    text-align: right;
-}
 
 #coinHtml, #rollHtml, #billHtml, #bankHtml {
     text-align: left;
@@ -176,4 +166,13 @@ td {
     font-variant: small-caps;
     text-align: center;
     font-size: small;
+}
+#depositHtml {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+#loanInput {
+    color: red;
+    text-align: left;
 }
