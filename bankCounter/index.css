@@ -172,8 +172,7 @@ td {
     font-size: 30px;
     color: black;
     font-weight: bold;
-    text-decoration: underline solid red;
-    text-underline-offset:3px;
+    text-decoration: underline red;
 }
 
 .renderHtml {
