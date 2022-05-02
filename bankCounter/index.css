@@ -172,7 +172,9 @@ td {
     font-size: 30px;
     color: black;
     font-weight: bold;
-    text-decoration: underline red;
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+    text-decoration-color: red;
 }
 
 .renderHtml {
