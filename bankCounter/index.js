@@ -43,7 +43,7 @@ function multiplyRender(el, mul, arr, ind, sum, html, f, sum2){
         bankHtml.innerHTML = `$${sum2}`
         let deposit = sum2 - loanInput.value
         deposit = deposit.toFixed(2) * 1
-        depositHtml.innerHTML = `${deposit}`
+        depositHtml.innerHTML = `$${deposit}`
         sum2 = 0
         sum = 0
         })}
@@ -71,7 +71,7 @@ function loanRenderDeposit(el){
         }
         let total = sumBank - el.value
         total = total.toFixed(2) * 1
-        depositHtml.innerHTML = `${total}`
+        depositHtml.innerHTML = `$${total}`
         sumBank = 0
     })
 }
