@@ -49,21 +49,35 @@ function multiplyRender(el, mul, arr, ind, sum, html, f, sum2){
         sum2 = 0
         sum = 0
         })}
-function displayDateTime(){
-    let x = new Date()
-    let ampm = x.getHours() >= 12 ? 'PM' : 'AM';
-    
-    let x1= x.getMonth() + 1 + '/' + x.getDate() + '/' + x.getFullYear();
-
-    x1 = x1 + ' ' + x.getHours() + ':' + x.getMinutes() + ':' + x.getSeconds() + '(' + ampm + ')';
-
-    dateHtml.innerHTML = `--${x1}--`
-    refresh()
-}
-function refresh(){
-    let time = 1000
-    mytime = setTimeout('displayDateTime()', time)
-}
+function display_ct7() {
+            let x = new Date()
+            let ampm = x.getHours( ) >= 12 ? 'PM' : 'AM';
+            hours = x.getHours( ) % 12;
+            hours = hours ? hours : 12;
+            hours=hours.toString().length==1? 0+hours.toString() : hours;
+            
+            let minutes=x.getMinutes().toString()
+            minutes=minutes.length==1 ? 0+minutes : minutes;
+            
+            let seconds=x.getSeconds().toString()
+            seconds=seconds.length==1 ? 0+seconds : seconds;
+            
+            let month=(x.getMonth() +1).toString();
+            month=month.length==1 ? 0+month : month;
+            
+            let dt=x.getDate().toString();
+            dt=dt.length==1 ? 0+dt : dt;
+            
+            let x1=month + "/" + dt + "/" + x.getFullYear(); 
+            x1 = x1 + ` ${hours}:${minutes}:${seconds}${ampm}`;
+            document.getElementById('dateHtml').innerHTML = `--${x1}--`;
+            display_c7();
+             }
+function display_c7(){
+            let refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct7()',refresh)
+            }
+display_c7()
 function loanRenderDeposit(el){
     el.addEventListener('focusout', function(){
         el.className = 'noBorder'
@@ -87,7 +101,6 @@ function borderless(){
 console.log(document.getElementsByTagName('input'))
 borderless()
 loanRenderDeposit(loanInput)
-displayDateTime()
 multiplyRender(pennyRolls, 0.5, arrRolls, 0, sumRolls, rollHtml, 0, sumBank)
 multiplyRender(nickleRolls, 2, arrRolls, 1, sumRolls, rollHtml, 0, sumBank)
 multiplyRender(dimeRolls, 5, arrRolls, 2, sumRolls, rollHtml, 0, sumBank)
