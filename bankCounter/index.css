@@ -97,6 +97,7 @@ th{
 
 tr:last-child{
     border-bottom: 0px;
+    height: 10px;
 }
 
 td {
@@ -106,8 +107,12 @@ td {
     text-align: center;
 }
 
+td:last-child{
+    height: 10px;
+}
+
 .borderSeperator {
-    border-bottom: 3px double black;
+    border-bottom: 5px double black;
 }
 
 .totalLine {
@@ -163,7 +168,6 @@ td {
     font-family: 'Courier New', Courier, monospace;
     color: lightslategray;
     text-align: center;
-    font-size: x-large;
 }
 #depositHtml {
     font-family: 'Courier New', Courier, monospace;
