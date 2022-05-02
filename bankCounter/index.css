@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #e7f5fb ;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin: 0 auto;
     padding: 0;
@@ -20,7 +20,7 @@ body {
 input {
     border: 1px dashed black;
     box-sizing: border-box;
-    font-size: large;
+    font-size: x-large;
     background-color: transparent;
     width: 90%;
     height: 90%;
@@ -28,6 +28,8 @@ input {
     text-align: center;
     cursor: grabbing;
     padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
 }
 
 input:focus {
@@ -47,14 +49,14 @@ input:hover {
 }
 
 h2, h3 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color:white;
     background-color: rgb(112, 173, 71) ;
     border-bottom: 0px solid black;
     margin: 0px;
     padding: 2px 0px;
     font-weight: normal;
-    font-variant: small-caps;
+    text-transform: uppercase;
     font-size: 30px;
     line-height: 30px;
 
@@ -111,8 +113,8 @@ td {
 .totalLine {
     text-align: right;
     color: black;
-    font-variant: small-caps;
-    font-size: x-large;
+    font-size: large;
+    text-transform: uppercase;
 
 }
 
@@ -131,10 +133,7 @@ td {
 }
 
 .depositLine {
-    color: green;
-    font-weight: bold;
     font-size: x-large;
-    font-variant: small-caps;
     text-align: right;
 }
 
@@ -154,31 +153,27 @@ td {
     text-align: right;
 }
 
-#loanHtml {
-    color: red;
-    text-align: center;
-}
-
-
-
 #coinHtml, #rollHtml, #billHtml, #bankHtml {
     text-align: left;
     font-size: large;
-    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #dateHtml {
-    color: #101820FF;
-    font-variant: small-caps;
+    font-family: 'Courier New', Courier, monospace;
+    color: lightslategray;
     text-align: center;
-    font-size: large;
+    font-size: x-large;
 }
 #depositHtml {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
     text-align: center;
-    color: green;
+    font-size: 30px;
+    color: black;
     font-weight: bold;
-    text-decoration: underline dashed red;
-    text-underline-offset: 8px;
+    text-decoration: underline solid red;
+    text-underline-offset:3px;
 }
 
 .renderHtml {

@@ -36,10 +36,12 @@ function multiplyRender(el, mul, arr, ind, sum, html, f, sum2){
             arr[ind] = total;
         for (let i = 0; i < arr.length; i++){
             sum = sum + arr[i]}
+        sum = sum.toFixed(2) * 1
         html.innerHTML = `$${sum}`
         arrBank[f] = sum
         for (let i = 0; i < arrBank.length; i++){
             sum2 = sum2 + arrBank[i]}
+        sum2 = sum2.toFixed(2) * 1
         bankHtml.innerHTML = `$${sum2}`
         let deposit = sum2 - loanInput.value
         deposit = deposit.toFixed(2) * 1
@@ -53,9 +55,9 @@ function displayDateTime(){
     
     let x1= x.getMonth() + 1 + '/' + x.getDate() + '/' + x.getFullYear();
 
-    x1 = x1 + ' - ' + x.getHours() + ':' + x.getMinutes() + ':' + x.getSeconds() + '(' + ampm + ')';
+    x1 = x1 + ' ' + x.getHours() + ':' + x.getMinutes() + ':' + x.getSeconds() + '(' + ampm + ')';
 
-    dateHtml.innerHTML = `----- ${x1} -----`
+    dateHtml.innerHTML = `--${x1}--`
     refresh()
 }
 function refresh(){
