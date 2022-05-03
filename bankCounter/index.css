@@ -90,7 +90,7 @@ td {
     box-sizing: border-box;
 }
 td.denomination{
-    text-align: right;
+    text-align: center;
     font-size: x-large;
 }
 td.denomination::first-letter{
@@ -100,10 +100,6 @@ td.denomination::first-letter{
 }
 td.denomination::before {
     content: '$';
-}
-td.denomination::after{
-    content: '=';
-    font-size: medium;
 }
 td:last-child{
     height: 20px;
