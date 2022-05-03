@@ -13,17 +13,17 @@
             <table>
                 <tbody>
                 <tr>
-                    <th colspan="4" id="rollsAndCoins"><h3 id="inputName">Bank Counter</h3></th>
+                    <th colspan="4" id="rollsAndCoins" class="header"><h3 id="inputName">Bank Counter</h3></th>
                 </tr>
                 <tr>
                     <td class="denomination">
-                        00.50
+                        <label for="pennyRoll">00.50</label>
                     </td>
                     <td>
                         <input type="number" name="penny Roll" pattern="[0-9]{3}" id="pennyRoll" required placeholder="Rolls">
                     </td>
                     <td class="denomination">
-                        02.00
+                        <label for="nickleRoll">02.00</label>
                     </td>
                     <td>
                         <input type="number" name="nickle Roll" pattern="[0-9]{3}" id="nickleRoll" required placeholder="Rolls">
@@ -31,13 +31,13 @@
                 </tr>
                 <tr>
                     <td class="denomination">
-                        05.00
+                        <label for="dimeRoll">05.00</label>
                     </td>
                     <td>
                         <input type="number" name="dime Roll" pattern="[0-9]{3}" id="dimeRoll" required placeholder="Rolls">
                     </td>
                     <td class="denomination" >
-                        10.00
+                        <label for="quarterRoll">10.00</label>
                     </td>
                     <td>
                         <input type="number" name="quarter Roll" pattern="[0-9]{3}" id="quarterRoll" required placeholder="Rolls">
@@ -45,13 +45,13 @@
                 </tr>
                 <tr>
                     <td class="denomination" >
-                        00.01
+                        <label for="penny">00.01</label>
                     </td>
                     <td>
                         <input type="number" name="penny" pattern="[0-9]{3}" id="penny" required placeholder="Coins">
                     </td>
                     <td class="denomination" >
-                        00.05
+                        <label for="nickle">00.05</label>
                     </td>
                     <td>
                         <input type="number" name="nickle" pattern="[0-9]{3}" id="nickle" required placeholder="Coins">
@@ -59,26 +59,26 @@
                 </tr>
                 <tr>
                     <td class="denomination">
-                        00.10
+                        <label for="dime">00.10</label>
                     </td>
                     <td>
                         <input type="number" name="dime" pattern="[0-9]{3}" id="dime" required placeholder="Coins">
                     </td>
                     <td class="denomination">
-                        00.25
+                        <label for="quarter">00.25</label>
                     </td>
                     <td>
                         <input type="number" name="quarter" pattern="[0-9]{3}" id="quarter" required placeholder="Coins">
                     </td>
                 <tr>
                     <td class="denomination">
-                        01.00
+                        <label for="one">01.00</label>
                     </td>
                     <td>
                         <input type="number" name="one" pattern="[0-9]{3}" id="one" required  placeholder="Bills">
                     </td>
                     <td class="denomination">
-                        05.00
+                        <label for="five">05.00</label>
                     </td>
                     <td>
                         <input type="number" name="five" pattern="[0-9]{3}" id="five" required  placeholder="Bills">
@@ -86,13 +86,13 @@
                 </tr>
                 <tr>
                     <td class="denomination">
-                        10.00
+                        <label for="ten">10.00</label>
                     </td>
                     <td>
                         <input type="number" name="ten" pattern="[0-9]{3}" id="ten" required  placeholder="Bills">
                     </td>
                     <td class="denomination">
-                        20.00
+                        <label for="twenty">20.00</label>
                     </td>
                     <td>
                         <input type="number" name="twenty" pattern="[0-9]{3}" id="twenty" required  placeholder="Bills">
@@ -100,13 +100,13 @@
                 </tr>
                 <tr class="borderSeperator">
                     <td class="denomination">
-                        50.00
+                        <label for="fifty">50.00</label>
                     </td>
                     <td>
                         <input type="number" name="fifty" pattern="[0-9]{3}" id="fifty" required placeholder="Bills">
                     </td>
                     <td class="denomination">
-                        100.0
+                        <label for="hundred">100.0</label>
                     </td>
                     <td>
                         <input type="number" name="hundred" pattern="[0-9]{3}" id="hundred" required placeholder="Bills">
@@ -146,7 +146,7 @@
                 </tr>
                 <tr>
                     <td  class="totalLine" colspan="2">
-                        Loan
+                        <label for="loanInput">Loan</label>
                     </td>
                     <td id="loanHtml" colspan="2">
                         <input type="number" name="loan" id="loanInput" pattern="[0-9]{3}" value="800">
@@ -162,7 +162,7 @@
                 </tr>         
                 
                 <tr>
-                <td id="dateHtml" colspan="4"></td>
+                <th id="dateHtml" colspan="4" class="footer"></th>
                 </tr>
                 </tbody>
             </table>
