@@ -4,14 +4,14 @@ const   dimeRolls       =   document.getElementById('dimeRoll')
 const   quarterRolls    =   document.getElementById('quarterRoll')
 const   rollsBtn        =   document.getElementById('rollsBtn')
 const   rollHtml        =   document.getElementById('rollHtml')
-let     arrRolls        =   [0]
+let     arrRolls        =   [0, 0, 0 ,0]
 let     sumRolls        =   0
 const   penny           =   document.getElementById('penny')
 const   nickle          =   document.getElementById('nickle')
 const   dime            =   document.getElementById('dime')
 const   quarter         =   document.getElementById('quarter')
 const   coinHtml        =   document.getElementById('coinHtml')
-let     arrCoin         =   [0]
+let     arrCoin         =   [0, 0, 0, 0]
 let     sumCoin         =   0
 const   one             =   document.getElementById('one')
 const   five            =   document.getElementById('five')
@@ -20,35 +20,43 @@ const   twenty          =   document.getElementById('twenty')
 const   fifty           =   document.getElementById('fifty')
 const   hundred         =   document.getElementById('hundred')
 const   billHtml        =   document.getElementById('billHtml')
-let     arrBill         =   [0]
+let     arrBill         =   [0, 0, 0, 0, 0, 0]
 let     sumBill         =   0
 const   bankHtml        =   document.getElementById('bankHtml')
-let     arrBank         =   [0]
+let     arrBank         =   [0, 0, 0]
 let     sumBank         =   0
 const   loanHtml        =   document.getElementById('loanHtml')
 const   depositHtml     =   document.getElementById('depositHtml')
 const   loanInput       =   document.getElementById('loanInput')
 const   dateHtml        =   document.getElementById('dateHtml')
+const   inputName       =   document.getElementById('inputName')
 function multiplyRender(el, mul, arr, ind, sum, html, f, sum2){
+    el.addEventListener("focus", function(){
+        inputName.innerHTML = `${el.name}`
+    })
         el.addEventListener("focusout", function() {
-        el.className = 'noBorder'
+            if (el.value != '') {
+                el.className = 'noBorder'}
+            else {el.className = ''}
             let total = el.value * mul;
             arr[ind] = total;
-        for (let i = 0; i < arr.length; i++){
-            sum = sum + arr[i]}
-        sum = sum.toFixed(2) * 1
-        html.innerHTML = `$${sum}`
-        arrBank[f] = sum
-        for (let i = 0; i < arrBank.length; i++){
-            sum2 = sum2 + arrBank[i]}
-        sum2 = sum2.toFixed(2) * 1
-        bankHtml.innerHTML = `$${sum2}`
-        let deposit = sum2 - loanInput.value
-        deposit = deposit.toFixed(2) * 1
-        depositHtml.innerHTML = `$${deposit}`
-        sum2 = 0
-        sum = 0
+            for (let i = 0; i < arr.length; i++){
+                sum = sum + arr[i]}
+            sum = sum.toFixed(2) * 1
+            html.innerHTML = `${sum}`
+            arrBank[f] = sum
+            for (let i = 0; i < arrBank.length; i++){
+                sum2 = sum2 + arrBank[i]}
+            sum2 = sum2.toFixed(2) * 1
+            bankHtml.innerHTML = `${sum2}`
+            let deposit = sum2 - loanInput.value
+            deposit = deposit.toFixed(2) * 1
+            depositHtml.innerHTML = `${deposit}`
+            sum2 = 0
+            sum = 0
+            inputName.innerHTML = `BANK COUNTER`
         })}
+
 function display_ct7() {
             let x = new Date()
             let ampm = x.getHours( ) >= 12 ? 'PM' : 'AM';
@@ -78,28 +86,24 @@ function display_c7(){
             mytime=setTimeout('display_ct7()',refresh)
             }
 display_c7()
+
 function loanRenderDeposit(el){
     el.addEventListener('focusout', function(){
-        el.className = 'noBorder'
+        if (el.value != '') {
+            el.className = 'noBorder'}
+        else {el.className = ''}
         sumBank = 0
         for (let i = 0; i < arrBank.length; i++){
             sumBank = sumBank + arrBank[i]
         }
         let total = sumBank - el.value
         total = total.toFixed(2) * 1
-        depositHtml.innerHTML = `$${total}`
+        depositHtml.innerHTML = `${total}`
         sumBank = 0
     })
 }
 
-function borderless(){
-    let obj = document.getElementsByTagName('input')
-    if (obj.value != '') {
-        obj.className = 'borderless'
-    }
-}
-console.log(document.getElementsByTagName('input'))
-borderless()
+console.log(pennyRolls.name)
 loanRenderDeposit(loanInput)
 multiplyRender(pennyRolls, 0.5, arrRolls, 0, sumRolls, rollHtml, 0, sumBank)
 multiplyRender(nickleRolls, 2, arrRolls, 1, sumRolls, rollHtml, 0, sumBank)

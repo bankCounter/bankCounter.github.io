@@ -8,73 +8,157 @@
     <title>Bank Counter</title>
 </head>
 <body>
-    <!-- <h1 id="countBank">BANK COUNTER</h1> -->
-    <!-- <p id="countBankTotal" class="sumTotals">Total: </p> -->
         <div id="container">
             <form>
-                <!-- Loan Amount: <input type="number" name="loanAmount" pattern="[0-9]{3}" id="loanAmount" required><br> -->
             <table>
                 <tbody>
                 <tr>
-                    <th colspan="4" id="rollsAndCoins"><h3>Bank Counter</h3></th>
+                    <th colspan="4" id="rollsAndCoins"><h3 id="inputName">Bank Counter</h3></th>
                 </tr>
                 <tr>
-                    <td class="denomination">50&cent;</td>
-                    <td><input type="number" name="pennyRoll" pattern="[0-9]{3}" id="pennyRoll" required placeholder="Rolls"></td>
-                    <td class="denomination">$2</td>
-                    <td><input type="number" name="nickleRoll" pattern="[0-9]{3}" id="nickleRoll" required placeholder="Rolls"></td>
+                    <td class="denomination">
+                        00.50
+                    </td>
+                    <td>
+                        <input type="number" name="penny Roll" pattern="[0-9]{3}" id="pennyRoll" required placeholder="Rolls">
+                    </td>
+                    <td class="denomination">
+                        02.00
+                    </td>
+                    <td>
+                        <input type="number" name="nickle Roll" pattern="[0-9]{3}" id="nickleRoll" required placeholder="Rolls">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="denomination">$5</td>
-                    <td><input type="number" name="dimeRoll" pattern="[0-9]{3}" id="dimeRoll" required placeholder="Rolls"></td>
-                    <td class="denomination">$10</td>
-                    <td><input type="number" name="quarterRoll" pattern="[0-9]{3}" id="quarterRoll" required placeholder="Rolls"></td>
+                    <td class="denomination">
+                        05.00
+                    </td>
+                    <td>
+                        <input type="number" name="dime Roll" pattern="[0-9]{3}" id="dimeRoll" required placeholder="Rolls">
+                    </td>
+                    <td class="denomination" >
+                        10.00
+                    </td>
+                    <td>
+                        <input type="number" name="quarter Roll" pattern="[0-9]{3}" id="quarterRoll" required placeholder="Rolls">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="denomination">1&cent;</td>
-                    <td><input type="number" name="penny" pattern="[0-9]{3}" id="penny" required placeholder="Coins"></td>
-                    <td class="denomination">5&cent;</td>
-                    <td><input type="number" name="nickle" pattern="[0-9]{3}" id="nickle" required placeholder="Coins"></td>
+                    <td class="denomination" >
+                        00.01
+                    </td>
+                    <td>
+                        <input type="number" name="penny" pattern="[0-9]{3}" id="penny" required placeholder="Coins">
+                    </td>
+                    <td class="denomination" >
+                        00.05
+                    </td>
+                    <td>
+                        <input type="number" name="nickle" pattern="[0-9]{3}" id="nickle" required placeholder="Coins">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="denomination">10&cent;</td>
-                    <td><input type="number" name="dime" pattern="[0-9]{3}" id="dime" required placeholder="Coins"></td>
-                    <td class="denomination">25&cent;</td>
-                    <td><input type="number" name="quarter" pattern="[0-9]{3}" id="quarter" required placeholder="Coins"></td>
+                    <td class="denomination">
+                        00.10
+                    </td>
+                    <td>
+                        <input type="number" name="dime" pattern="[0-9]{3}" id="dime" required placeholder="Coins">
+                    </td>
+                    <td class="denomination">
+                        00.25
+                    </td>
+                    <td>
+                        <input type="number" name="quarter" pattern="[0-9]{3}" id="quarter" required placeholder="Coins">
+                    </td>
                 <tr>
-                    <td class="denomination">$1</td>
-                    <td><input type="number" name="one" pattern="[0-9]{3}" id="one" required  placeholder="Bills"></td>
-                    <td class="denomination">$5</td>
-                    <td><input type="number" name="five" pattern="[0-9]{3}" id="five" required  placeholder="Bills"></td>
+                    <td class="denomination">
+                        01.00
+                    </td>
+                    <td>
+                        <input type="number" name="one" pattern="[0-9]{3}" id="one" required  placeholder="Bills">
+                    </td>
+                    <td class="denomination">
+                        05.00
+                    </td>
+                    <td>
+                        <input type="number" name="five" pattern="[0-9]{3}" id="five" required  placeholder="Bills">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="denomination">$10</td>
-                    <td><input type="number" name="ten" pattern="[0-9]{3}" id="ten" required  placeholder="Bills"></td>
-                    <td class="denomination">$20</td>
-                    <td><input type="number" name="twenty" pattern="[0-9]{3}" id="twenty" required  placeholder="Bills"></td>
+                    <td class="denomination">
+                        10.00
+                    </td>
+                    <td>
+                        <input type="number" name="ten" pattern="[0-9]{3}" id="ten" required  placeholder="Bills">
+                    </td>
+                    <td class="denomination">
+                        20.00
+                    </td>
+                    <td>
+                        <input type="number" name="twenty" pattern="[0-9]{3}" id="twenty" required  placeholder="Bills">
+                    </td>
                 </tr>
                 <tr class="borderSeperator">
-                    <td class="denomination" colspan="1">$50</td>
-                    <td colspan="1"><input type="number" name="fifty" pattern="[0-9]{3}" id="fifty" required placeholder="Bills"></td>
-                    <td class="denomination" colspan="1">$100</td>
-                    <td colspan="1"><input type="number" name="hundred" pattern="[0-9]{3}" id="hundred" required placeholder="Bills"></td>
+                    <td class="denomination">
+                        50.00
+                    </td>
+                    <td>
+                        <input type="number" name="fifty" pattern="[0-9]{3}" id="fifty" required placeholder="Bills">
+                    </td>
+                    <td class="denomination">
+                        100.0
+                    </td>
+                    <td>
+                        <input type="number" name="hundred" pattern="[0-9]{3}" id="hundred" required placeholder="Bills">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="totalLine" colspan="1">Rolls = </td>
-                    <td id="rollHtml" class="renderHtml" colspan="1">$</td>
-                    <td colspan="1"  class="totalLine">Total =</td>
-                    <td id="bankHtml" colspan="1" class="renderHtml">$</td>
+                    <td class="totalLine" colspan="2">
+                        Deposit
+                    </td>
+                    <td id="depositHtml" colspan="2">
+                        0
+                    </td>
                 </tr>
                 <tr>
-                    <td class="totalLine" colspan="1">Coins = </td>
-                    <td id="coinHtml" class="renderHtml" colspan="1">$</td>
-                    <td  class="totalLine" colspan="1">Loan =</td>
-                    <td id="loanHtml" colspan="1"><input type="number" name="loan" id="loanInput" pattern="[0-9]{3}" value="800"></td>
+                    <td class="totalLine" colspan="2">
+                        Total
+                    </td>
+                    <td id="bankHtml" colspan="2">
+                        0
+                    </td>
                 </tr>
                 <tr>
-                    <td class="totalLine" colspan="1">Bills = </td>
-                    <td id="billHtml" class="renderHtml colspan="1">$</td>
-                    <td id="depositHtml" colspan="2">DEPOSIT</td>
+                    <td class="totalLine" colspan="2">
+                        Rolls
+                    </td>
+                    <td id="rollHtml" colspan="2">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td class="totalLine" colspan="2">
+                        Coins
+                    </td>
+                    <td id="coinHtml" colspan="2">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="totalLine" colspan="2">
+                        Loan
+                    </td>
+                    <td id="loanHtml" colspan="2">
+                        <input type="number" name="loan" id="loanInput" pattern="[0-9]{3}" value="800">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="totalLine" colspan="2">
+                        Bills
+                    </td>
+                    <td id="billHtml" colspan="2">
+                        0
+                    </td>
                 </tr>         
                 
                 <tr>

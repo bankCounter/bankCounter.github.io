@@ -9,60 +9,42 @@ body {
     padding: 0;
     border: 0px solid green;
 }
-
 #container {
     display: flex;
     justify-content: center;
     align-items: top;
     background-color: #f8fcfe ;
+    text-align: center;
 }
-
 input {
-    border: 1px dashed black;
+    border-style: outset;
     box-sizing: border-box;
     font-size: x-large;
     background-color: transparent;
-    width: 90%;
-    height: 90%;
-    opacity: 1;
-    text-align: center;
     cursor: grabbing;
     padding: 0px;
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
+    width: 93.75px;
+    text-align: center;
 }
-
 input:focus {
     background-color: white;
     color: black;
     opacity: 1;
+    text-align: center;
 }
-
 input:hover {
     background-color: yellow;
 }
-
-.noBorder {
-    border: 0px;
-    color: black;
-    background-color: transparent;
-}
-
-h2, h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    background-color: rgb(112, 173, 71) ;
-    border-bottom: 0px solid black;
-    margin: 0px;
-    padding: 2px 0px;
-    font-weight: normal;
+h3{
+    box-sizing: border-box;
     text-transform: uppercase;
-    font-size: 30px;
-    line-height: 40px;
-
+    margin: 0px;
+    padding: 0px;
+    font-size: x-large;
+    height: 39px;
 }
-
-
 table{
     width: 375px;
     background-color: white ;
@@ -72,115 +54,99 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    text-align: center;
 }
-
 tr {
     border-bottom: 1px solid white;
     padding: 0px;
     height: 40px;
+    box-sizing: border-box;
 }
-
 tr:nth-child(even){
     background-color: rgb(198, 224, 180);
 }
-
 tr:nth-child(odd){
     background-color: rgb(226, 239, 218);
 }
-
-th{
-    padding: 0px;
-    text-align: center;
-    border-bottom: 2px solid white;
-
-}
-
 tr:last-child{
     border-bottom: 0px;
     height: 10px;
 }
+tr:nth-child(8){
+    border-bottom-color:black;
+}
+th{
+    padding: 0px;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
 
+}
 td {
     border: 0px solid black;
-    height: 40px;
-    width: 25%;
+    padding: 0px;
+    width: 93.75px;
     text-align: center;
+    box-sizing: border-box;
 }
-
+td.denomination{
+    text-align: right;
+    font-size: x-large;
+}
+td.denomination::first-letter{
+    color: green;
+    vertical-align: super;
+    font-size: medium;
+}
+td.denomination::before {
+    content: '$';
+}
+td.denomination::after{
+    content: '=';
+    font-size: medium;
+}
 td:last-child{
-    height: 10px;
+    height: 20px;
 }
-
-.borderSeperator {
-    border-bottom: 5px double black;
-}
-
-.totalLine {
-    text-align: right;
-    color: black;
-    font-size: large;
-    text-transform: uppercase;
-
-}
-
-.bankLine{
-    /* background-color: rgb(100, 170, 170); */
-    text-align: right;
-    font-variant: small-caps;
-    
-}
-
-.loanLine{
-    /* background-color: rgb(125, 170, 170); */
-    text-align: right;
-    font-variant: small-caps;
-
-}
-
-.depositLine {
+td.totalLine{
     font-size: x-large;
     text-align: right;
+    text-indent: 50px;
 }
-
-.denomination {
+td.totalLine::after{
+    content: '=';
+    font-size: medium;
+}
+.noBorder {
+    border: 0px;
     color: black;
+    background-color: transparent;
+}
+#rollHtml, #bankHtml, #coinHtml, #billHtml{
+    font-family: 'Courier New', Courier, monospace;
     font-size: x-large;
 }
-
-
-
-.loanSign {
-    color: red;
-    text-align: right;
-}
-
-.alignRight {
-    text-align: right;
-}
-
-#coinHtml, #rollHtml, #billHtml, #bankHtml {
-    text-align: left;
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-#dateHtml {
-    font-family: 'Courier New', Courier, monospace;
-    color: lightslategray;
-    text-align: center;
+#rollHtml::before, #bankHtml::before, #coinHtml::before, #billHtml::before{
+    content: '$';
+    color: green;
+    vertical-align: super;
+    font-size: medium;
 }
 #depositHtml {
     font-family: 'Courier New', Courier, monospace;
-    background-color: white;
     text-align: center;
     font-size: 30px;
     color: black;
     font-weight: bold;
-    text-decoration-style: solid;
-    text-decoration-line: underline;
-    text-decoration-color: red;
 }
-
-.renderHtml {
+#depositHtml::before{
+    content: '$';
     font-size: medium;
+    vertical-align: super;
+    color: red;
+}
+#dateHtml {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
 }
