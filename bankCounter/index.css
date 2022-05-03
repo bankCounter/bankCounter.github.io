@@ -10,7 +10,6 @@ body {
     border: 0px solid green;
 }
 #container {
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: top;
