@@ -226,6 +226,7 @@ for (let a = 0; a < denomination.length; a++) {
 
         let product         =   b.rate*denInput.value
 
+        theader.innerHTML   =   b.spelled
         example.innerHTML   =   `${b.rate} x ${denInput.value}`
         exaAnswer.innerHTML =   product
         
