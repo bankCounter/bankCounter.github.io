@@ -9,6 +9,17 @@
 </head>
 <body>
     <section id="container">
+        <div id="div-container">
+            <table id="table-denomination">
+                <thead>
+                </thead>
+                <tbody id="tbody">
+                    <tr id="loanTr"><td><label for="loan-input">loan</label></td><td><input id="loan-input" name="loan" type="number" pattern="[0-9]{3}" placeholder="800" value="800" required=""></td></tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
         <table id="table-calculate">
             <thead>
             </thead>
@@ -22,18 +33,6 @@
                 </tr>
             </tbody>
         </table>
-    <div id="div-container">
-    <table id="table-denomination">
-        <thead>
-        </thead>
-        <tbody id="tbody">
-            <tr id="loanTr"><td><label for="loan-input">loan</label></td><td><input id="loan-input" name="loan" type="number" pattern="[0-9]{3}" placeholder="800" value="800" required=""></td></tr>
-        </tbody>
-        <tfoot>
-        </tfoot>
-    </table>
-</div>
-<span id="dateHtml"></span>
 <div id="div-total">
 <table id="table-total">
     <thead>
@@ -42,6 +41,7 @@
     </tbody>
 </table>
 </div>
+<span id="dateHtml"></span>
 </section>
     <script src="index.js"></script>
 </body>
