@@ -215,6 +215,10 @@ for (let a = 0; a < denomination.length; a++) {
     tr.appendChild(tdR)
     tbody.appendChild(tr)
     
+    denInput.addEventListener('click', function(){
+        this.select()
+        this.scrollIntoView()
+    })
     denInput.addEventListener('focus', function(){
 
         this.select()
@@ -222,9 +226,30 @@ for (let a = 0; a < denomination.length; a++) {
 
         let product         =   b.rate*denInput.value
 
-        theader.innerHTML   =   b.spelled
         example.innerHTML   =   `${b.rate} x ${denInput.value}`
         exaAnswer.innerHTML =   product
+        
+        array.array[b.sumArray][b.array]    =   product
+
+        let sum             =   sumArr(array.array[b.sumArray])
+
+
+        totalTd.innerHTML   =   sum
+
+        array.array[3][b.sumArray]      =   sum
+
+
+        array.total        =   sumArr(array.array[3])
+
+
+        document.getElementById('total-total').innerHTML    =   array.total
+
+
+        let fixedSum  =   array.total-loanInput.value
+
+        fixedSum            =   fixedSum.toFixed(2)*1
+
+        document.getElementById('deposit-total').innerHTML  =   fixedSum
     })
     
     denInput.addEventListener('input', function () {
@@ -244,13 +269,13 @@ for (let a = 0; a < denomination.length; a++) {
         array.array[3][b.sumArray]      =   sum
 
 
-        let totalSum        =   sumArr(array.array[3])
+        array.total        =   sumArr(array.array[3])
 
 
-        document.getElementById('total-total').innerHTML    =   totalSum
+        document.getElementById('total-total').innerHTML    =   array.total
 
 
-        let fixedSum  =   totalSum-loanInput.value
+        let fixedSum  =   array.total-loanInput.value
 
         fixedSum            =   fixedSum.toFixed(2)*1
 
@@ -258,10 +283,22 @@ for (let a = 0; a < denomination.length; a++) {
         
     })
 
+    denInput.addEventListener('focusout', function () {
+        theader.innerHTML   =   'bank counter'
+        example.innerHTML   =   'calculate here'
+        exaAnswer.innerHTML =   'answer here'
+    })
+
 }
 
 loanInput.addEventListener('focus', function () {
     this.select()
+})
+loanInput.addEventListener('input', function () {
+    let deposit             =   0
+    deposit                 =   array.total-loanInput.value
+    deposit                 =   deposit.toFixed(2)*1
+    document.getElementById('deposit-total').innerHTML    =   deposit
 })
 
 function display_ct7() {
