@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Bank Counter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section id="container">
+        <table id="table-calculate">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="table-calculate-header" colspan="2">Bank Counter</td>
+                </tr>
+                <tr>
+                    <td id="table-calculate-calculate">Calculate here</td>
+                    <td id="table-calculate-answer">answer here</td>
+                </tr>
+            </tbody>
+        </table>
+    <div id="div-container">
+    <table id="table-denomination">
+        <thead>
+        </thead>
+        <tbody id="tbody">
+            <tr id="loanTr"><td><label for="loan-input">loan</label></td><td><input id="loan-input" name="loan" type="number" pattern="[0-9]{3}" placeholder="800" value="800" required=""></td></tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
+<span id="dateHtml"></span>
+<div id="div-total">
+<table id="table-total">
+    <thead>
+    </thead>
+    <tbody id="table-total-tbody">
+    </tbody>
+</table>
+</div>
+</section>
+    <script src="index.js"></script>
+</body>
+</html>
