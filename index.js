@@ -217,11 +217,11 @@ for (let a = 0; a < denomination.length; a++) {
     
     denInput.addEventListener('click', function(){
         this.select()
-        this.scrollIntoView()
     })
     denInput.addEventListener('focus', function(){
-
+        
         this.select()
+        this.scrollIntoView({behavior:'smooth',block:'start',inline:'nearest'})
 
         let product         =   b.rate*denInput.value
 
