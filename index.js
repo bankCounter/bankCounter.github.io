@@ -208,6 +208,7 @@ for (let a = 0; a < denomination.length; a++) {
     denInput.setAttribute('type', 'number')
     denInput.setAttribute('pattern', '[0-9]{3}')
     denInput.setAttribute('placeholder', b.type)
+    denInput.setAttribute('tab-index', a+1)
     denInput.setAttribute('required', '')
 
     tr.appendChild(tdL)
@@ -223,7 +224,8 @@ for (let a = 0; a < denomination.length; a++) {
         this.select()
         this.scrollIntoView({behavior:'smooth',block:'start',inline:'nearest'})
 
-        let product         =   b.rate*denInput.value
+        let answer          =   b.rate*denInput.value
+        product             =   answer.toFixed(2) * 1
 
         theader.innerHTML   =   b.spelled
         example.innerHTML   =   `${b.rate} x ${denInput.value}`
