@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L55B7YNBET"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L55B7YNBET');
-</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -17,14 +8,44 @@
     <title>Bank Counter</title>
 </head>
 <body>
-        <div id="container">
-            <form>
+        <!-- <div class="container">
             <table>
+                <thead>
+                    <tr>
+                        <th>Hello</th>
+                    </tr>
+                </thead>
                 <tbody>
+                    <tr>
+                        <td>onecell</td>
+                    </tr>
+                    <tr>
+                        <td>twocell</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>endcell</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div> -->
+        <div class="container">
+            <form>
+                <div id="inputName" class="header">Bank Counter</div>
+            <div class="scroll-container">
+
+            <table class="bankCounter">
+                <thead>
                 <tr>
-                    <th colspan="4" id="rollsAndCoins" class="header"><h3 id="inputName">Bank Counter</h3></th>
+                    <!-- <th colspan="4" id="inputName" class="header">Bank Counter  </th> -->
                 </tr>
+            </thead>
+
+                <tbody>
+
                 <tr>
+
                     <td class="denomination">
                         <label for="pennyRoll">00.50</label>
                     </td>
@@ -121,6 +142,19 @@
                         <input type="number" name="hundred" pattern="[0-9]{3}" id="hundred" required placeholder="Bills">
                     </td>
                 </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                    <!-- <td id="dateHtml" colspan="4" class="footer"></td> -->
+                    </tr>
+                </tfoot>
+                </table>
+            </div>
+            <div id="dateHtml" class="footer"></div>
+                <table class="total">
+                    <thead>
+                    </thead>
+                    <tbody>
                 <tr>
                     <td class="totalLine" colspan="2">
                         Deposit
@@ -168,16 +202,16 @@
                     <td id="billHtml" colspan="2">
                         0
                     </td>
-                </tr>         
-                
-                <tr>
-                <th id="dateHtml" colspan="4" class="footer"></th>
                 </tr>
-                </tbody>
-            </table>
-            </form>
-        </div>
-
+            </tbody>
+            <tfoot>
+                <tr>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    </div>
+    
     <script src="index.js"></script>
 </body>
 </html>

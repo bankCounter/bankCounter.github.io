@@ -119,4 +119,3 @@ multiplyRender(ten, 10, arrBill, 2, sumBill, billHtml, 2, sumBank)
 multiplyRender(twenty, 20, arrBill, 3, sumBill, billHtml, 2, sumBank)
 multiplyRender(fifty, 50, arrBill, 4, sumBill, billHtml, 2, sumBank)
 multiplyRender(hundred, 100, arrBill, 5, sumBill, billHtml, 2, sumBank)
-

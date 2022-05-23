@@ -222,7 +222,6 @@ for (let a = 0; a < denomination.length; a++) {
     denInput.addEventListener('focus', function(){
 
         this.select()
-        this.scrollIntoView()
 
         let product         =   b.rate*denInput.value
 
