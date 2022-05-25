@@ -142,6 +142,7 @@ for (let a = 0; a < objs.length; a++) {
     input.addEventListener('focus', function(){
         
         this.select()
+        this.scrollIntoView()
         let product         =   (b.cost*input.value).toFixed(2)*1
         divHeader.innerHTML =   b.spelled
         calculate.innerHTML =   `${input.value} x ${b.cost}`
