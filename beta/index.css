@@ -1,0 +1,197 @@
+* {margin: 0; box-sizing: border-box;}
+:root{
+    --bgColor1:     #023e8a;
+    --bgColor2:     #0077b6;
+    --bgColor3:     #fefefe;
+    font-size: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: -webkit-linear-gradient(top, var(--bgColor2), var(--bgColor1));
+    background: linear-gradient(var(to bottom,--bgColor2, var(--bgColor1)));
+    background-color: #0077b6;
+    height: 100vh;
+    font-size: 1.5rem;
+
+}
+
+body section#bankCounter {
+    width: 375px;
+    margin: 0 auto;
+    border: 1px solid white;
+    height: 667px;
+    padding: 3px;
+}
+
+body section#bankCounter div {
+    border: 0px solid black;
+}
+
+body section#bankCounter div#header {
+    /* border-color: red; */
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+body section#bankCounter div#input-container {
+    border: 0px;
+    /* border: 1px solid white; */
+    padding: 0ox;
+    margin: 0px;
+    width: 100%;
+}
+
+body section#bankCounter div#input-container div {
+    margin: 0px auto;
+    border: 0px;
+    padding: 0px;
+}
+
+body section#bankCounter div#input-container div table {
+    width: 100%;
+}
+
+body section#bankCounter div#input-container div#input-header {
+    background-color: transparent;
+}
+
+body section#bankCounter div#input-container div#input-header table#headerTable {
+    border-spacing: 0px;
+    width: 357px;
+    font-size: 2rem;
+}
+
+body section#bankCounter div#input-container div#input-header table#headerTable thead tr th{
+    background-color: lightskyblue;
+    width: 50%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+body section#bankCounter div#input-container div#input{
+    background-color: lightskyblue;
+    height: 210px;
+    overflow-y: auto;
+    /* border: 1px solid black; */
+}
+body section#bankCounter div#input-container div#input  table#inputTable{
+    background-color: transparent;
+    border-spacing: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr{
+    background-color: transparent;
+    /* border-bottom: 1px solid black; */
+    display: block;
+    position: relative;
+    
+}
+
+/* body section#bankCounter div#input-container div#input  table#inputTable tbody tr:first-child{
+     margin-top: 0px; 
+}
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr:last-child{
+    margin-bottom: 0px;
+      border-bottom: 0px; 
+} */
+
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr td {
+    width: 50%;
+    background-color: #ffffff50;
+    border-radius: 20px;
+    height: 150px;
+}
+
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr td:last-child{
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr td:first-child{
+    background-color: transparent;
+}
+
+body section#bankCounter div#input-container div#input  table#inputTable tbody tr td input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px dashed black;
+    background-color: #ffffff50;
+}
+
+::placeholder {
+  color: #000000;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #000000;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #000000;
+}
+
+body section#bankCounter div#total {
+    border-color: brown;
+}
+body section#bankCounter div#footer {
+    border-color: cyan;
+
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: var(--bgColor1);
+}
+/* 
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0px 0px 5px #00000025;
+    box-shadow: inset 0px 0px 5px #00000025;
+    border: 1px dashed black;
+} */
+
+::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0px 0px 5px #ffffff75;
+    box-shadow: inset 0px 0px 5px #ffffff75;
+    background: lightblue;
+    border: 1px dotted black;
+    border-radius: 5px;
+
+}
+
+body section#bankCounter div#footer table#receipt {
+    width: 100%;
+    margin: 0px auto;
+    border: 1px solid black;
+    text-transform: uppercase;
+}
+body section#bankCounter div#footer table#receipt tr.roll{
+    color: beige;
+}
+body section#bankCounter div#footer table#receipt tr.coin{
+    color: burlywood;
+}
+body section#bankCounter div#footer table#receipt tr.cash{
+    color: orange;
+}
+/* body section#bankCounter div#footer table#receipt tr td {
+} */
+
+body section#bankCounter div#footer table#receipt tr td:nth-of-type(even){
+    width: 15%;
+    border: 1px solid black;
+    text-align: center;
+}
