@@ -133,7 +133,7 @@ for (let a = 0; a < objs.length; a++) {
     input.addEventListener('click', function(){
         
         this.select()
-        this.scrollIntoView()
+        // this.scrollIntoView(false)
         let product         =   (b.cost*input.value).toFixed(2)*1
         divHeader.innerHTML =   b.spelled
         calculate.innerHTML =   `${input.value} x ${b.cost}`
@@ -143,7 +143,7 @@ for (let a = 0; a < objs.length; a++) {
     input.addEventListener('focus', function(){
         
         this.select()
-        this.scrollIntoView()
+        // this.scrollIntoView(false)
         let product         =   (b.cost*input.value).toFixed(2)*1
         divHeader.innerHTML =   b.spelled
         calculate.innerHTML =   `${input.value} x ${b.cost}`
