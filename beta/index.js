@@ -5,14 +5,14 @@ function obj (displayName, cost, type, spelled) {
         this.spelled        =   spelled;
 }
 
-let data            =      [
+const data            =      [
     ['00.50', '02.00', '05.00','10.00', '00.01', '00.05', '00.10', '00.25', '01.00', '05.00', '10.00', '20.00', '50.00', '100.0'],
     [.5, 2, 5, 10,0.01,0.05,0.1,0.25,1,5,10,20,50,100],
     ['roll','roll','roll','roll','coin','coin','coin','coin','cash','cash','cash','cash','cash','cash',],
     ['penny-roll','nickle-roll','dime-roll','quarter-roll','penny','nickle','dime','quarter','one','five','ten','twenty','fifty','hundred']
 ]
 
-let objs            =   []
+const objs            =   []
 
 for (let a = 0; a < data[0].length; a++) {
 
@@ -21,166 +21,127 @@ for (let a = 0; a < data[0].length; a++) {
 let sumArray      =   (array) => 
                         array.reduce((accumulator, number) => 
                         number + accumulator, 0
-)
+)                      
 
-let inputAmount     =   [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+const inputData       =   [1,1,1,1,1,1,0,0,1,1,1,0,0,0]
 
-// let loan            =   document.querySelector('#loan-input').value
+const totalData         =   
+[
+{       display:    'Total-Roll',
+        array:      sumArray(inputData.slice(0,4)),
+},
+{       display:    'Total-Coin',
+        array:      sumArray(inputData.slice(4,8)),
+},
+{       display:    'Total-Cash',
+        array:      sumArray(inputData.slice(8,13))
+},
+{      display:    'Total',
+        array:      sumArray(inputData),
+},
+]
+console.log(totalData[0].array)
+console.log(totalData[1].array)
+console.log(totalData[2].array)
 
-let divHeader       =   document.querySelector('#header')
-let divInput        =   document.querySelector('#input')
-let divTotal        =   document.querySelector('#total')
-let inputHeader  =   document.querySelector('#input-header')
+console.log(totalData[3].array)
 
-let inputTable      =   document.createElement('table')
-inputTable.id       =   'inputTable'
-let headerTable     =   document.createElement('table')
-headerTable.id      =   'headerTable'
 
-let thead           =   document.createElement('thead')
-let tr              =   document.createElement('tr')
-let h1              =   document.createElement('th')
-let h2              =   document.createElement('th')
+const container     =   document.querySelector('#container')
+const totalContainer    =   document.querySelector('#total-container')
 
-h1.innerHTML        =   'amount'
-h2.innerHTML        =   'denomination'
-h1.id               =   'amount'
-h2.id               =   'denomination'
-tr.appendChild(h1)
-tr.appendChild(h2)
-thead.appendChild(tr)
-headerTable.appendChild(thead)
-
-let tbody       =   document.createElement('tbody')
-inputTable.appendChild(tbody)
-
-inputHeader.appendChild(headerTable)
-divInput.appendChild(inputTable)
-
-let calculate   =   document.querySelector('#amount')      
-let answer      =   document.querySelector('#denomination') 
-
-let divfooter       =   document.querySelector('#footer')
-let tableReceipt    =   document.createElement('table')
-tableReceipt.id     =   'receipt'
-divfooter.appendChild(tableReceipt)
-
-let counter0    =   0
-let counter1    =   1
-let counter2    =   2
-let counter3    =   3
-
-for (let a = 0; a < 7; a++) {
+for (let b = 0; b < 4; b++) {
     
-    let rTr         =   document.createElement('tr')
-    let rTd1        =   document.createElement('td')
-    let rTd2        =   document.createElement('td')
-    let rTd3        =   document.createElement('td')
-    let rTd4        =   document.createElement('td')
-    let b           =   a * 2
-    
-    rTr.classList.add(objs[b].type)
+    let div4        =   document.createElement('div')
+    let span6       =   document.createElement('span')
+    let span7       =   document.createElement('span')
 
-    rTd1.id         =   objs[b].spelled
-    rTd2.id         =   objs[b].spelled + '-input-value'
-    rTd3.id         =   objs[counter1].spelled
-    rTd4.id         =   objs[counter1].spelled + '-input-value'
-    
-    counter1 += 2
-    counter2 += 2
-    counter3 += 2
-    rTr.appendChild(rTd1)
-    rTr.appendChild(rTd2)
-    rTr.appendChild(rTd3)
-    rTr.appendChild(rTd4)
+    span7.id    =   totalData[b].display
 
-    tableReceipt.appendChild(rTr)
+    span6.innerHTML =   totalData[b].display
+    span7.innerHTML =   totalData[b].array
+    
+    div4.appendChild(span6)
+    div4.appendChild(span7)
+    
+    totalContainer.appendChild(div4)
     
 }
 
 
-for (let a = 0; a < objs.length; a++) {
+for (let a = 0; a < 14; a++) {
     
-    const b = objs[a];
-    
-    let tr          =   document.createElement('tr')
-    let tdR         =   document.createElement('td')
-    let tdL         =   document.createElement('td')
-    let input       =   document.createElement('input')
-    
-    input.setAttribute('id', b.spelled + '-input')
-    input.setAttribute('name', b.spelled)
-    input.setAttribute('placeholder', b.type)
-    input.setAttribute('type', 'text')
-    input.setAttribute('pattern', '[0-9]{3}')
-    
-    tdL.appendChild(input)
-    tdR.innerHTML   =   `<label for="${b.displayName}-input">${b.displayName}`
-    
-    tr.appendChild(tdL)
-    tr.appendChild(tdR)
-    tbody.appendChild(tr)
+    const div1     =   document.createElement('div')
+    const div2     =   document.createElement('div')
+    const inputel   =   document.createElement('input')
+    const aside     =   document.createElement('aside')
+    const span1     =   document.createElement('span')
+    const span2     =   document.createElement('span')
+    const span3     =   document.createElement('span')
+    const objsa     =   objs[a]
 
-    // receipt table
-    let eleId       =   b.spelled
-    let eleIdInput  =   b.spelled + '-input-value'
-    let rTd1        =   document.getElementById(eleId)
-    let rTd3        =   document.getElementById(eleIdInput)
+    inputel.setAttribute('type', 'number')
+    inputel.setAttribute('pattern', '[0-9]*')
+    inputel.setAttribute('inputmode', 'decimal')
+
+    div1.innerHTML =    objsa.displayName
+    div2.appendChild(inputel)
+
+    span1.innerHTML =   objsa.spelled
+    span2.innerHTML =   objsa.cost + ' x ' + inputel.value
+    span3.innerHTML =   ' = ' + (inputel.value*objsa.cost).toFixed(2)*1
     
-    rTd1.innerHTML  =   b.spelled
-    rTd3.innerHTML  =   0
+    aside.appendChild(span1)
+    aside.appendChild(span2)
+    aside.appendChild(span3)
     
-    input.addEventListener('click', function(){
+    container.appendChild(aside)
+    container.appendChild(div1)
+    container.appendChild(div2)
+
+    let div3        =   document.createElement('div')
+    let span4       =   document.createElement('span')
+    let span5       =   document.createElement('span')
+
+    span4.innerHTML =   objsa.spelled
+    span5.innerHTML =   '000'
+
+    div3.appendChild(span4)
+    div3.appendChild(span5)
+    totalContainer.appendChild(div3)
+    
+    inputel.addEventListener('focusin', function(){
         
         this.select()
-        // this.scrollIntoView(false)
-        let product         =   (b.cost*input.value).toFixed(2)*1
-        divHeader.innerHTML =   b.spelled
-        calculate.innerHTML =   `${input.value} x ${b.cost}`
-        answer.innerHTML    =   product
-        
+        aside.style.display =   'inline-block'
+        span2.innerHTML =   objsa.cost + ' x ' + inputel.value
+        span3.innerHTML =   ' = $' + (inputel.value*objsa.cost).toFixed(2)*1
     })
-    input.addEventListener('focus', function(){
+    inputel.addEventListener('input', function(){
         
-        this.select()
-        // this.scrollIntoView(false)
-        let product         =   (b.cost*input.value).toFixed(2)*1
-        divHeader.innerHTML =   b.spelled
-        calculate.innerHTML =   `${input.value} x ${b.cost}`
-        answer.innerHTML    =   product
+        span2.innerHTML =   data[1][a] + ' x ' + inputel.value
+        let product      =   ' = $' + (inputel.value*objsa.cost).toFixed(2)*1
+        span3.innerHTML =   product
+        span5.innerHTML =   inputel.value
+
+        inputData[a]    =   (inputel.value*objsa.cost).toFixed(2)*1
+
+        console.log(inputData)
+
+        let totalRoll   =   document.querySelector('#Total-Roll')
+        let totalCoin   =   document.querySelector('#Total-Coin')
+        let totalCash   =   document.querySelector('#Total-Cash')
+        let BankTotal   =   document.querySelector('#Total')
+
+        totalRoll.innerHTML =   sumArray(inputData.slice(0,4))
+        totalCoin.innerHTML =   (sumArray(inputData.slice(4,8))).toFixed(2)*1
+        totalCash.innerHTML =   sumArray(inputData.slice(8,13))
+        BankTotal.innerHTML =   sumArray(inputData)
 
     })
-    input.addEventListener('input', function(){
-        
-        let product         =   (b.cost*input.value).toFixed(2)*1
-        answer.innerHTML    =   product
-        inputAmount[a]      =   product
-        let rollSum         =   sumArray(inputAmount.slice(0,4)).toFixed(2)*1
-        let coinSum         =   sumArray(inputAmount.slice(4, 8)).toFixed(2)*1
-        let cashSum         =   sumArray(inputAmount.slice(8, 14)).toFixed(2)*1
-        let totalBank       =   sumArray(inputAmount).toFixed(2)*1
-        calculate.innerHTML =   `${input.value} x ${b.cost}`
-        divHeader.innerHTML =   b.spelled
-        
-        
-        divTotal.innerHTML  =   `Total= ${totalBank} roll= ${rollSum} coin= ${coinSum} cash= ${cashSum}`
-        console.log(inputAmount)
-        let eleId       =   b.spelled
-        let eleIdInput  =   b.spelled + '-input-value'
-        let rTd1        =   document.getElementById(eleId)
-        let rTd3        =   document.getElementById(eleIdInput)
-        
-        rTd1.innerHTML  =   b.spelled
-        rTd3.innerHTML  =   input.value
-    })
-    
-    input.addEventListener('focusout', function(){
 
-        divHeader.innerHTML =   'bank counter'
-        calculate.innerHTML =   'amount'
-        answer.innerHTML    =   'denomination'
+    inputel.addEventListener('focusout', function(){
+        aside.style.display =   'none'
     })
-    
 }
-
 
