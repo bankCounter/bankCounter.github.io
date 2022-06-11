@@ -27,6 +27,9 @@ const inputData       =   [1,1,1,1,1,1,0,0,1,1,1,0,0,0]
 
 const totalData         =   
 [
+{       display:    'Total',
+        array:      sumArray(inputData),
+},
 {       display:    'Total-Roll',
         array:      sumArray(inputData.slice(0,4)),
 },
@@ -35,9 +38,6 @@ const totalData         =
 },
 {       display:    'Total-Cash',
         array:      sumArray(inputData.slice(8,13))
-},
-{      display:    'Total',
-        array:      sumArray(inputData),
 },
 ]
 console.log(totalData[0].array)
@@ -49,6 +49,21 @@ console.log(totalData[3].array)
 
 const container     =   document.querySelector('#container')
 const totalContainer    =   document.querySelector('#total-container')
+
+let div5            =   document.createElement('div')
+let span8           =   document.createElement('span')
+let span9           =   document.createElement('span')
+
+div5.id             =   'deposit'
+
+span9.id            =   'deposit-amount'
+
+span8.innerHTML     =   'deposit'
+span9.innerHTML     =   totalData[0].array - 800
+
+div5.appendChild(span8)
+div5.appendChild(span9)
+totalContainer.appendChild(div5)
 
 for (let b = 0; b < 4; b++) {
     
@@ -81,7 +96,7 @@ for (let a = 0; a < 14; a++) {
     const objsa     =   objs[a]
 
     inputel.setAttribute('type', 'number')
-    inputel.setAttribute('pattern', '[0-9]*')
+    inputel.setAttribute('pattern', '[0-9]')
     inputel.setAttribute('inputmode', 'decimal')
 
     div1.innerHTML =    objsa.displayName
@@ -124,6 +139,8 @@ for (let a = 0; a < 14; a++) {
         span3.innerHTML =   product
         span5.innerHTML =   inputel.value
 
+        let deposit     =   document.querySelector('#deposit-amount')
+
         inputData[a]    =   (inputel.value*objsa.cost).toFixed(2)*1
 
         console.log(inputData)
@@ -137,6 +154,9 @@ for (let a = 0; a < 14; a++) {
         totalCoin.innerHTML =   (sumArray(inputData.slice(4,8))).toFixed(2)*1
         totalCash.innerHTML =   sumArray(inputData.slice(8,13))
         BankTotal.innerHTML =   sumArray(inputData)
+
+        deposit.innerHTML     =   (sumArray(inputData) - 800).toFixed(2)*1
+
 
     })
 

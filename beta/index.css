@@ -91,6 +91,11 @@ body aside#total-container div
     background-color: #ffffff75;
 }
 
+body aside#total-container div#deposit
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 body aside#total-container div span
 {
     font-size: 1.7rem;
