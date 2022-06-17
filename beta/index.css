@@ -39,11 +39,28 @@ body section#container aside
 body section#container aside span
 {
     display: inline-block;
-    width: 33.33%;
     text-align: center;
     background-color: lightblue;
     font-size: 2.5rem;
+    text-transform: uppercase;
 }
+
+body section#container aside span:first-child
+{
+    display: block;
+}
+body section#container aside span:nth-of-type(even)
+{
+    width: 50%;
+}
+body section#container aside span:last-child
+{
+    width: 50%;
+    font-weight: bold;
+    color: red;
+}
+
+
 body section#container div
 {
     display: flex;
