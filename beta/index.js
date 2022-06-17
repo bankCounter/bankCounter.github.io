@@ -23,28 +23,28 @@ let sumArray      =   (array) =>
                         number + accumulator, 0
 )                      
 
-const inputData       =   [1,1,1,1,1,1,0,0,1,1,1,0,0,0]
+const inputData       =   [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 const totalData         =   
 [
 {       display:    'Total',
         array:      sumArray(inputData),
+        type:       'total'
 },
 {       display:    'Total-Roll',
         array:      sumArray(inputData.slice(0,4)),
+        type:       'roll'
 },
 {       display:    'Total-Coin',
         array:      sumArray(inputData.slice(4,8)),
+        type:       'coin'
 },
 {       display:    'Total-Cash',
-        array:      sumArray(inputData.slice(8,13))
+        array:      sumArray(inputData.slice(8,13)),
+        type:       'cash'
 },
 ]
-console.log(totalData[0].array)
-console.log(totalData[1].array)
-console.log(totalData[2].array)
 
-console.log(totalData[3].array)
 
 
 const container     =   document.querySelector('#container')
@@ -71,7 +71,11 @@ for (let b = 0; b < 4; b++) {
     let span6       =   document.createElement('span')
     let span7       =   document.createElement('span')
 
+    div4.id     =   totalData[b].type + '-div'
+
     span7.id    =   totalData[b].display
+
+    span7.classList.add(totalData[b].type)
 
     span6.innerHTML =   totalData[b].display
     span7.innerHTML =   totalData[b].array
@@ -98,8 +102,13 @@ for (let a = 0; a < 14; a++) {
     inputel.setAttribute('type', 'number')
     inputel.setAttribute('pattern', '[0-9]')
     inputel.setAttribute('inputmode', 'decimal')
+    inputel.setAttribute('id', `${objsa.spelled}-input`)
+    inputel.setAttribute('placeholder', `${objsa.type}`)
+    inputel.setAttribute('class', `${objsa.type}`)
 
-    div1.innerHTML =    objsa.displayName
+    div1.classList.add(objsa.type)
+
+    div1.innerHTML =    `<label for='${objsa.spelled}-input'>${objsa.displayName}</label>`
     div2.appendChild(inputel)
 
     span1.innerHTML =   objsa.spelled
@@ -118,8 +127,10 @@ for (let a = 0; a < 14; a++) {
     let span4       =   document.createElement('span')
     let span5       =   document.createElement('span')
 
+    span5.classList.add(objsa.type)
+
     span4.innerHTML =   objsa.spelled
-    span5.innerHTML =   '000'
+    span5.innerHTML =   '0'
 
     div3.appendChild(span4)
     div3.appendChild(span5)
@@ -150,12 +161,12 @@ for (let a = 0; a < 14; a++) {
         let totalCash   =   document.querySelector('#Total-Cash')
         let BankTotal   =   document.querySelector('#Total')
 
-        totalRoll.innerHTML =   sumArray(inputData.slice(0,4))
-        totalCoin.innerHTML =   (sumArray(inputData.slice(4,8))).toFixed(2)*1
-        totalCash.innerHTML =   sumArray(inputData.slice(8,13))
-        BankTotal.innerHTML =   sumArray(inputData)
+        totalRoll.innerHTML =   '$' + sumArray(inputData.slice(0,4))
+        totalCoin.innerHTML =       '$' + (sumArray(inputData.slice(4,8))).toFixed(2)*1
+        totalCash.innerHTML =   '$' + sumArray(inputData.slice(8,13))
+        BankTotal.innerHTML =   '$' + sumArray(inputData)
 
-        deposit.innerHTML     =   (sumArray(inputData) - 800).toFixed(2)*1
+        deposit.innerHTML     =     '$' + (sumArray(inputData) - 800).toFixed(2)*1
 
 
     })

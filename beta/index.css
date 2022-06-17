@@ -70,16 +70,25 @@ body section#container div
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: black;
-    background-color: #00000050;
+    background-color: #00000030;
     font-size: 4rem;
 }
 body section#container div:nth-of-type(odd)
 {
     border-width: 1px 1px 1px 1rem ;
 }
-/* body section#container div:nth-of-type(even)
+body section#container div:nth-of-type(odd).roll
 {
-} */
+    border-left-color: green ;
+}
+body section#container div:nth-of-type(odd).coin
+{
+    border-left-color: purple ;
+}
+body section#container div:nth-of-type(odd).cash
+{
+    border-left-color: blue ;
+}
 
 body section#container div input
 {
@@ -113,6 +122,26 @@ body aside#total-container div#deposit
     grid-column-start: 1;
     grid-column-end: 3;
 }
+body aside#total-container div#total-div
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+body aside#total-container div#roll-div
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+body aside#total-container div#coin-div
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+body aside#total-container div#cash-div
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 body aside#total-container div span
 {
     font-size: 1.7rem;
@@ -131,4 +160,16 @@ body aside#total-container div span:nth-of-type(even)
     padding-right: 1rem;
     color: black;
     font-weight: bold;
+}
+body aside#total-container div span:nth-of-type(even).roll
+{
+    color: green;
+}
+body aside#total-container div span:nth-of-type(even).coin
+{
+    color: purple;
+}
+body aside#total-container div span:nth-of-type(even).cash
+{
+    color: red;
 }
