@@ -13,7 +13,7 @@
 
 body
 {
-    background-color: lightsalmon;
+    background-color: whitesmoke;
 }
 
 body section#container
@@ -32,7 +32,7 @@ body section#container aside
 {
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: orange;
+    background-color: black;
     display: none;
 }
 
@@ -94,7 +94,7 @@ body section#container div input
 {
     width: 90%;
     height: 90%;
-    border: 1px outset lightsalmon;
+    border: 1px dashed red;
     text-align: center;
     font-size: 4rem;
     cursor: grab;
@@ -104,62 +104,29 @@ body aside#total-container
 {
     width: 375px;
     margin: 1rem auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 2px;
     padding: 2px;
     background-color: #00000025;
 }
 body aside#total-container div
 {
     border: 1px solid black;
-    height: fit-content;
-    background-color: #ffffff75;
+    background-color: #ffffff50;
+    width: 100%;
 }
 
-body aside#total-container div#deposit
-{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-body aside#total-container div#total-div
-{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-body aside#total-container div#roll-div
-{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-body aside#total-container div#coin-div
-{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-body aside#total-container div#cash-div
-{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
 body aside#total-container div span
 {
     font-size: 1.7rem;
-    text-align: center;
-    padding: 2px;
+    /* padding: 2px; */
     text-transform: uppercase;
+    width: 33.33%;
+    display: inline-block;
 }
 
-body aside#total-container div span:nth-of-type(odd)
+body aside#total-container div span:first-child
 {
-    float: left;
-}
-body aside#total-container div span:nth-of-type(even)
-{
-    float: right;
-    padding-right: 1rem;
-    color: black;
-    font-weight: bold;
+    text-align: left;
+    padding: 2px;
 }
 body aside#total-container div span:nth-of-type(even).roll
 {

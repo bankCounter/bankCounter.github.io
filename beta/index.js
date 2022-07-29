@@ -9,7 +9,7 @@ const data            =      [
     ['00.50', '02.00', '05.00','10.00', '00.01', '00.05', '00.10', '00.25', '01.00', '05.00', '10.00', '20.00', '50.00', '100.0'],
     [.5, 2, 5, 10,0.01,0.05,0.1,0.25,1,5,10,20,50,100],
     ['roll','roll','roll','roll','coin','coin','coin','coin','cash','cash','cash','cash','cash','cash',],
-    ['penny-roll','nickle-roll','dime-roll','quarter-roll','penny','nickle','dime','quarter','one','five','ten','twenty','fifty','hundred']
+    ['&cent;50-roll','$2-roll','$5-roll','$10-roll','penny','nickle','dime','quarter','one','five','ten','twenty','fifty','hundred']
 ]
 
 const objs            =   []
@@ -126,14 +126,17 @@ for (let a = 0; a < 14; a++) {
     let div3        =   document.createElement('div')
     let span4       =   document.createElement('span')
     let span5       =   document.createElement('span')
+    let span6       =   document.createElement('span')
 
     span5.classList.add(objsa.type)
 
     span4.innerHTML =   objsa.spelled
     span5.innerHTML =   '0'
+    span6.innerHTML =   '0'
 
     div3.appendChild(span4)
     div3.appendChild(span5)
+    div3.appendChild(span6)
     totalContainer.appendChild(div3)
     
     inputel.addEventListener('focusin', function(){
@@ -149,6 +152,7 @@ for (let a = 0; a < 14; a++) {
         let product      =   ' = $' + (inputel.value*objsa.cost).toFixed(2)*1
         span3.innerHTML =   product
         span5.innerHTML =   inputel.value
+        span6.innerHTML =   ' = $' + (inputel.value*objsa.cost).toFixed(2)*1
 
         let deposit     =   document.querySelector('#deposit-amount')
 
@@ -164,7 +168,7 @@ for (let a = 0; a < 14; a++) {
         totalRoll.innerHTML =   '$' + sumArray(inputData.slice(0,4))
         totalCoin.innerHTML =       '$' + (sumArray(inputData.slice(4,8))).toFixed(2)*1
         totalCash.innerHTML =   '$' + sumArray(inputData.slice(8,13))
-        BankTotal.innerHTML =   '$' + sumArray(inputData)
+        BankTotal.innerHTML =   '$' + (sumArray(inputData)).toFixed(2)*1
 
         deposit.innerHTML     =     '$' + (sumArray(inputData) - 800).toFixed(2)*1
 
